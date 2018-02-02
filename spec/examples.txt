@@ -1,0 +1,19 @@
+example_id                            | status | run_time        |
+------------------------------------- | ------ | --------------- |
+./spec/models/album_spec.rb[1:1:1]    | failed | 0.00114 seconds |
+./spec/models/album_spec.rb[1:2:1:1]  | failed | 0.00761 seconds |
+./spec/models/album_spec.rb[1:2:2:1]  | failed | 0.00502 seconds |
+./spec/models/album_spec.rb[1:2:3:1]  | failed | 0.00438 seconds |
+./spec/models/album_spec.rb[1:2:4:1]  | failed | 0.00509 seconds |
+./spec/models/artist_spec.rb[1:1:1]   | failed | 0.00728 seconds |
+./spec/models/artist_spec.rb[1:1:2]   | failed | 0.02442 seconds |
+./spec/models/artist_spec.rb[1:2:1:1] | failed | 0.00569 seconds |
+./spec/models/artist_spec.rb[1:2:2:1] | failed | 0.00922 seconds |
+./spec/models/artist_spec.rb[1:2:3:1] | failed | 0.01116 seconds |
+./spec/models/artist_spec.rb[1:2:4:1] | failed | 0.01082 seconds |
+./spec/models/track_spec.rb[1:1:1]    | failed | 0.00115 seconds |
+./spec/models/track_spec.rb[1:1:2]    | failed | 0.00114 seconds |
+./spec/models/track_spec.rb[1:2:1:1]  | failed | 0.0097 seconds  |
+./spec/models/track_spec.rb[1:2:2:1]  | failed | 0.00988 seconds |
+./spec/models/track_spec.rb[1:2:3:1]  | failed | 0.00493 seconds |
+./spec/models/track_spec.rb[1:2:4:1]  | failed | 0.0064 seconds  |
