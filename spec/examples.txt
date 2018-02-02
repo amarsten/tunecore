@@ -1,19 +1,19 @@
 example_id                            | status | run_time        |
 ------------------------------------- | ------ | --------------- |
-./spec/models/album_spec.rb[1:1:1]    | passed | 0.00156 seconds |
-./spec/models/album_spec.rb[1:2:1:1]  | passed | 0.01002 seconds |
-./spec/models/album_spec.rb[1:2:2:1]  | passed | 0.01268 seconds |
-./spec/models/album_spec.rb[1:2:3:1]  | passed | 0.01057 seconds |
-./spec/models/album_spec.rb[1:2:4:1]  | passed | 0.01331 seconds |
-./spec/models/artist_spec.rb[1:1:1]   | passed | 0.00165 seconds |
-./spec/models/artist_spec.rb[1:1:2]   | passed | 0.00206 seconds |
-./spec/models/artist_spec.rb[1:2:1:1] | passed | 0.00855 seconds |
-./spec/models/artist_spec.rb[1:2:2:1] | passed | 0.00754 seconds |
-./spec/models/artist_spec.rb[1:2:3:1] | passed | 0.00978 seconds |
-./spec/models/artist_spec.rb[1:2:4:1] | passed | 0.00853 seconds |
-./spec/models/track_spec.rb[1:1:1]    | passed | 0.00115 seconds |
-./spec/models/track_spec.rb[1:1:2]    | passed | 0.00135 seconds |
-./spec/models/track_spec.rb[1:2:1:1]  | passed | 0.02009 seconds |
-./spec/models/track_spec.rb[1:2:2:1]  | passed | 0.02178 seconds |
-./spec/models/track_spec.rb[1:2:3:1]  | passed | 0.05335 seconds |
-./spec/models/track_spec.rb[1:2:4:1]  | passed | 0.02438 seconds |
+./spec/models/album_spec.rb[1:1:1]    | passed | 0.02465 seconds |
+./spec/models/album_spec.rb[1:2:1:1]  | passed | 0.01948 seconds |
+./spec/models/album_spec.rb[1:2:2:1]  | passed | 0.02298 seconds |
+./spec/models/album_spec.rb[1:2:3:1]  | passed | 0.02116 seconds |
+./spec/models/album_spec.rb[1:2:4:1]  | passed | 0.01983 seconds |
+./spec/models/artist_spec.rb[1:1:1]   | passed | 0.02095 seconds |
+./spec/models/artist_spec.rb[1:1:2]   | passed | 0.01982 seconds |
+./spec/models/artist_spec.rb[1:2:1:1] | passed | 0.02535 seconds |
+./spec/models/artist_spec.rb[1:2:2:1] | passed | 0.0222 seconds  |
+./spec/models/artist_spec.rb[1:2:3:1] | passed | 0.02361 seconds |
+./spec/models/artist_spec.rb[1:2:4:1] | passed | 0.01855 seconds |
+./spec/models/track_spec.rb[1:1:1]    | passed | 0.05059 seconds |
+./spec/models/track_spec.rb[1:1:2]    | passed | 0.01845 seconds |
+./spec/models/track_spec.rb[1:2:1:1]  | passed | 0.02162 seconds |
+./spec/models/track_spec.rb[1:2:2:1]  | passed | 0.02381 seconds |
+./spec/models/track_spec.rb[1:2:3:1]  | passed | 0.01993 seconds |
+./spec/models/track_spec.rb[1:2:4:1]  | passed | 0.02259 seconds |

@@ -9,25 +9,6 @@ RSpec.describe Track, type: :model do
 
 	describe "searching tracks" do
 
-		before :each do
-			@rem = Artist.create! name: "R.E.M."
-			@drugdealer = Artist.create! name: "Drugdealer"
-			@ramones = Artist.create! name: "Ramones"
-
-			@dead_letter = Album.create! name: "Dead Letter Office", artist: @rem
-			@comedy = Album.create! name: "The End of Comedy", artist: @drugdealer
-			@rocket = Album.create! name: "Rocket to Russia", artist: @ramones
-
-			@rockaway_theme = Track.create! name: "Far Rockaway Theme", artist: @drugdealer, album: @comedy
-			@alessandro = Track.create! name: "Theme for Alessandro", artist: @drugdealer, album: @comedy
-
-			@walter = Track.create! name: "Walter's Theme", artist: @rem, album: @dead_letter
-			@femme = Track.create! name: "Femme Fatale", artist: @rem, album: @dead_letter
-
-			@rockaway_beach = Track.create! name: "Rockaway Beach", artist: @ramones, album: @rocket
-			@sheena = Track.create! name: "Sheena Is A Punk Rocker", artist: @ramones, album: @rocket
-		end
-
 		context "when no tracks match the query" do
 			it "returns no results" do
 				expect(Track.search_by_name("foo").count).to eq(0)
