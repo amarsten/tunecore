@@ -24,3 +24,6 @@
 
 #Ignore credentials
 .env
+
+#
+/spec/examples.txt
