@@ -43,6 +43,7 @@ RSpec.configure do |config|
 
     @rockaway_beach = Track.create! name: "Rockaway Beach", artist: @ramones, album: @rocket
     @sheena = Track.create! name: "Sheena Is A Punk Rocker", artist: @ramones, album: @rocket
+    @dance = Track.create! name: "Do You Wanna Dance?", artist: @ramones, album: @rocket
   end
 
 end
