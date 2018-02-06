@@ -14,7 +14,8 @@ class Track < ApplicationRecord
 	    END DESC
 		)
 
-		joins(:album, :artist)
+		includes(:album, :artist)
+		.references(:albums, :artists)
 		.where("tracks.name LIKE :name
 			AND albums.name LIKE :album 
 			AND artists.name LIKE :artist", 
