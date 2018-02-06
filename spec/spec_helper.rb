@@ -38,7 +38,7 @@ RSpec.configure do |config|
     @dream = Album.create! name: "Lost In The Dream", artist: @war_on_drugs
 
     @rockaway_theme = Track.create! name: "Far Rockaway Theme", artist: @drugdealer, album: @comedy
-    @alessandro = Track.create! name: "Theme for Alessandro", artist: @drugdealer, album: @comedy
+    @alessandro = Track.create! name: "Theme For Alessandro", artist: @drugdealer, album: @comedy
 
     @walter = Track.create! name: "Walter's Theme", artist: @rem, album: @dead_letter
     @femme = Track.create! name: "Femme Fatale", artist: @rem, album: @dead_letter
