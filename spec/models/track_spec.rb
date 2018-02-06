@@ -7,68 +7,143 @@ RSpec.describe Track, type: :model do
 		it { should belong_to(:album)}
 	end
 
-	describe "searching tracks" do
+	describe "#search" do
+		subject { described_class.search(**arguments)}
 
-		context "when nothing matches the query" do
-			it "returns no results" do
-				expect(Track.find_by_string("foo").count).to eq(0)
+		context "when only name is passed" do
+			let(:arguments) { {name: "rockaway", album: nil, artist: nil} }
+
+			it "returns only tracks with matching names" do
+				is_expected.to contain_exactly(@rockaway_theme, @rockaway_beach)
+			end
+
+		end
+
+		context "when only album is passed" do
+			let(:arguments) { {name: nil, album: "the", artist: nil} }
+
+			it "returns all track with matching albums" do
+				is_expected.to contain_exactly(@rockaway_theme, @alessandro, @red_eyes, @pressure)
 			end
 		end
 
-		context "when only one track matches the query" do
-			it "returns only that track" do
-				results = Track.find_by_string("sheena")
-				expect(results).to include(@sheena)
-				expect(results.count).to eq(1)
+		context "when only artist is passed" do 
+			let(:arguments) { {name: nil, album: nil, artist: "the"} }
+
+			it "returns all tracks with matching artist" do
+				is_expected.to contain_exactly(@rockaway_beach, @sheena, @dance, @red_eyes, @pressure)
 			end
 		end
 
-		context "when the multiple tracks match the query" do
-			it "returns all matches" do
-				results = Track.find_by_string("rockaway")
-				expect(results).to include(@rockaway_theme)
-			    expect(results).to include(@rockaway_beach)
-			    expect(results.count).to eq(2)
+		context "when only name and album are passed" do
+			let(:arguments) { {name: "under", album: "the", artist: nil} }
+			# it "returns no results if nothing matches" do
+			# 	expect(Track.search(name: "foo", album: "foo").count).to eq(0)
+			# end
+
+			# it "returns no results if nothing matches track" do
+			# 	expect(Track.search(name: "foo", album: "the end").count).to eq(0)
+			# end
+
+			# it "returns no results if nothing matches album" do
+			# 	expect(Track.search(name: "theme", album: "foo").count).to eq(0)
+			# end
+
+			# it "returns one track if one match" do
+			# 	results = Track.search(name: "rockaway", album: "rocket")
+			# 	expect(results).to include(@rockaway_beach)
+			# 	expect(results.count).to eq(1)
+			# end
+
+			it "returns only tracks that match both" do
+				is_expected.to contain_exactly(@pressure)
 			end
 		end
 
-		context "when the query is in the middle of a track name" do
-			it "still returns the track" do
-				results = Track.find_by_string("theme")
-				expect(results).to include(@rockaway_theme)
-			    expect(results).to include(@alessandro)
-				expect(results).to include(@walter)
-				expect(results.count).to eq(3)
+		context "when only name and artist are passed" do
+			let(:arguments) { {name: "theme", album: nil, artist: "drugdealer"} }
+			# it "returns no results if nothing matches either" do
+			# 	expect(Track.search(name: "foo", artist: "foo").count).to eq(0)
+			# end
+
+			# it "returns no results if nothing matches track" do
+			# 	expect(Track.search(name: "foo", artist: "ramones").count).to eq(0)
+			# end
+
+			# it "returns no results if nothing matches artist" do
+			# 	expect(Track.search(name: "Theme", artist: "foo").count).to eq(0)
+			# end
+
+			# it "returns one track if one match" do
+			# 	results = Track.search(name: "theme for", artist: "drug")
+			# 	expect(results).to include(@alessandro)
+			# 	expect(results.count).to eq(1)
+			# end
+
+			it "returns only tracks that match both" do
+				is_expected.to contain_exactly(@rockaway_theme)
 			end
 		end
 
-		context "when the query matches an album name" do
-			it "returns all tracks associated with that album" do
-				results = Track.find_by_string("rocket")
-				expect(results).to include(@rockaway_beach)
-			    expect(results).to include(@sheena)
-			    expect(results).to include(@dance)
-				expect(results.count).to eq(3)
+		context "when only artist and album are passed" do
+			let(:arguments) { {name: nil, album: "lost", artist: "the"} }
+			# it "returns no results if nothing matches" do
+			# 	expect(Track.search(album: "foo", artist: "foo").count).to eq(0)
+			# end
+
+			# it "returns no results if nothing matches album" do
+			# 	expect(Track.search(album: "foo", artist: "ramones").count).to eq(0)
+			# end
+
+			# it "returns no results if nothing matches artist" do
+			# 	expect(Track.search(album: "dead letter", artist: "foo").count).to eq(0)
+			# end
+
+			# it "returns one track if one match" do
+			# 	results = Track.search(name: "r", album: "r")
+			# 	expect(results).to include(@rockaway_beach)
+			# 	expect(results.count).to eq(1)
+			# end
+
+			it "returns only tracks that match both" do
+				is_expected.to contain_exactly(@red_eyes, @pressure)
 			end
 		end
 
-		context "when the query is in the artist name" do
-			it "returns all tracks associated with that artist" do
-				results = Track.find_by_string("drug")
-				expect(results).to include(@rockaway_theme)
-			    expect(results).to include(@alessandro)
-				expect(results.count).to eq(2)
+		context "when all arguments are present" do
+			let(:arguments) { {name: "red", album: "lost", artist: "war"} }
+			# it "returns no results if nothing matches" do
+			# 	expect(Track.search(name: "foo" , album: "foo", artist: "foo").count).to eq(0)
+			# end
+
+			# it "returns no results if nothing matches track" do
+			# 	expect(Track.search(name: "foo", album: "rocket", artist: "ramones").count).to eq(0)
+			# end
+
+			# it "returns no results if nothing matches album" do
+			# 	expect(Track.search(name: "femme", album: "foo", artist: "r.e.m.").count).to eq(0)
+			# end
+
+			# it "returns no results if nothing matches artist" do
+			# 	expect(Track.search(track: "walter" , album: "dead letter", artist: "foo").count).to eq(0)
+			# end
+
+			# it "returns one track if one match" do
+			# 	results = Track.search(name: "r", album: "r", artist: "r")
+			# 	expect(results).to include(@rockaway_beach)
+			# 	expect(results.count).to eq(1)
+			# end
+
+			it "returns only tracks that match all three" do
+				is_expected.to contain_exactly(@red_eyes)
 			end
 		end
 
-		context "when the query matches track, album, and artist names" do
-			it "returns all tracks with matching names, albums, or artists" do
-				results = Track.find_by_string("d")
-				expect(results).to_not include(@rockaway_beach)
-			    expect(results).to_not include(@sheena)
-				expect(results.count).to eq(5)
-			end
-		end
+		# context "no arguments" do
+		# end
+
+		# context "no matches" do
+		# end
 
 	end
 

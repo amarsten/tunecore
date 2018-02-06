@@ -29,11 +29,13 @@ RSpec.configure do |config|
   config.before(:each) do
     @rem = Artist.create! name: "R.E.M."
     @drugdealer = Artist.create! name: "Drugdealer"
-    @ramones = Artist.create! name: "Ramones"
+    @ramones = Artist.create! name: "The Ramones"
+    @war_on_drugs = Artist.create! name: "The War On Drugs"
 
     @dead_letter = Album.create! name: "Dead Letter Office", artist: @rem
     @comedy = Album.create! name: "The End of Comedy", artist: @drugdealer
     @rocket = Album.create! name: "Rocket to Russia", artist: @ramones
+    @dream = Album.create! name: "Lost In The Dream", artist: @war_on_drugs
 
     @rockaway_theme = Track.create! name: "Far Rockaway Theme", artist: @drugdealer, album: @comedy
     @alessandro = Track.create! name: "Theme for Alessandro", artist: @drugdealer, album: @comedy
@@ -44,6 +46,10 @@ RSpec.configure do |config|
     @rockaway_beach = Track.create! name: "Rockaway Beach", artist: @ramones, album: @rocket
     @sheena = Track.create! name: "Sheena Is A Punk Rocker", artist: @ramones, album: @rocket
     @dance = Track.create! name: "Do You Wanna Dance?", artist: @ramones, album: @rocket
+
+    @red_eyes = Track.create! name: "Red Eyes", artist: @war_on_drugs, album: @dream
+    @pressure = Track.create! name: "Under The Pressure", artist: @war_on_drugs, album: @dream
+
   end
 
 end
