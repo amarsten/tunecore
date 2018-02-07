@@ -4,7 +4,7 @@
 	    <%= text_field_tag(:name, nil, placeholder: "Track Name", class: "form-control col-sm-2 offset-md-2 mb1") %>
 	    <%= text_field_tag(:album, nil, placeholder: "Album Name", class: "form-control col-sm-2 offset-md-1 mb1") %>
 	    <%= text_field_tag(:artist,nil, placeholder:  "Artist Name", class: "form-control col-sm-2 offset-md-1 mb1") %>
-		    <%= submit_tag("Search", class: "btn-primary offset-md-4 mx2 mb1", id: "search") %>
+		    <%= submit_tag("Search", class: "btn-primary offset-md-4 mx-auto", id: "search") %>
 	<% end %>
 
 	 <%= render partial: 'search_results', locals: { results: @results} %>

@@ -1,1 +1,9 @@
 @import "bootstrap";
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px){
+	table{
+		font-size: 70%;
+	}
+}
