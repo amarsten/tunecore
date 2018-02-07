@@ -1,7 +1,21 @@
-<% results.each do |result| %>
-  <div class="result_row">
-    <%= result.name %>
-    <%= result.album.name %>
-    <%= result.artist.name %>
-  </div>
+<% if results.nil?%>
+	<h6 class="text-center text-secondary px4">Welcome to TuneCore Search! You can search any combination of track, album, and artist name</h6>
+<% elsif results.empty? %>
+	<h6 class="text-center text-secondary">No Results :(</h6>
+<% else %>
+	<table class="table">
+		<tr>
+		<th>Track</th>
+		<th>Album</th>
+		<th>Artist</th>
+		</tr>
+	 
+	    <% results.each do |result| %>
+		  <tr>
+		    <td><%= result.name %></td>
+		    <td><%= result.album.name %></td>
+		    <td><%= result.artist.name %></td>
+		  </tr>
+		<% end %>
+	</table>
 <% end %>

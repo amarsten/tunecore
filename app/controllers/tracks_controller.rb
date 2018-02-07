@@ -1,7 +1,6 @@
 class TracksController < ApplicationController
 
 	def index
-		@results = []
 	end
 
 	def search

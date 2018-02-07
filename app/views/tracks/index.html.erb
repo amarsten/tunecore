@@ -1,9 +1,11 @@
-<h1>TuneCore Search</h1>
-<%= form_tag({controller: "tracks", action: "search"}, method: "get", remote: true) do %>
-    <%= text_field_tag(:name, nil, placeholder: "Track Name") %>
-    <%= text_field_tag(:album, nil, placeholder: "Album Name") %>
-    <%= text_field_tag(:artist,nil, placeholder:  "Artist Name") %>
-    <%= submit_tag("Search") %>
-<% end %>
- <%= render partial: 'search_results', locals: { results: @results} %>
+<div class="container">
+	<h1 class="text-center my4">TuneCore Search</h1>
+	<%= form_tag({controller: "tracks", action: "search"}, method: "get", remote: true, class: "form-inline") do %>
+	    <%= text_field_tag(:name, nil, placeholder: "Track Name", class: "form-control col-sm-2 offset-md-2 mb1") %>
+	    <%= text_field_tag(:album, nil, placeholder: "Album Name", class: "form-control col-sm-2 offset-md-1 mb1") %>
+	    <%= text_field_tag(:artist,nil, placeholder:  "Artist Name", class: "form-control col-sm-2 offset-md-1 mb1") %>
+		    <%= submit_tag("Search", class: "btn-primary offset-md-4 mx2 mb1", id: "search") %>
+	<% end %>
+
+	 <%= render partial: 'search_results', locals: { results: @results} %>
 </div>
